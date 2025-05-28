@@ -33,7 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
 
     if (refreshToken == null || accessToken == null) {
       Navigator.of(context).pushAndRemoveUntil(
-        MaterialPageRoute(builder: (context) => LoginScreen(),), (
+        MaterialPageRoute(builder: (context) => RootTab(),), (
           route) => false,);
     } else {
       Navigator.of(context).pushAndRemoveUntil(

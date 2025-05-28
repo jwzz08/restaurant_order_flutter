@@ -27,11 +27,13 @@ class DefaultLayout extends StatelessWidget {
         backgroundColor: Colors.white,
         //appbar가 앞으로 튀어나와있는 듯한 효과, default 값이 2 or 3정도임, 없는 게 요즘 트렌드
         elevation: 0,
-        title: Text(
-          title!,
-          style: TextStyle(
-            fontSize: 16.0,
-            fontWeight: FontWeight.w500
+        title: Center(
+          child: Text(
+            title!,
+            style: TextStyle(
+              fontSize: 16.0,
+              fontWeight: FontWeight.w500
+            ),
           ),
         ),
         foregroundColor: Colors.black,

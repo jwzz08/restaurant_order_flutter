@@ -26,12 +26,6 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     final dio = Dio();
 
-    //localhost
-    final emulatorIp = '10.0.2.2:3000';
-    final simulatorIp = '127.0.0.1:3000';
-
-    final ip = Platform.isIOS ? simulatorIp : emulatorIp;
-
     return DefaultLayout(
       child: SingleChildScrollView(
         //드래그 할 시에 자동으로 키보드 닫힘
@@ -113,16 +107,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 ),
                 TextButton(
                     onPressed: () async {
-                      final refreshToken =
-                          'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6InRlc3RAY29kZWZhY3RvcnkuYWkiLCJzdWIiOiJmNTViMzJkMi00ZDY4LTRjMWUtYTNjYS1kYTlkN2QwZDkyZTUiLCJ0eXBlIjoicmVmcmVzaCIsImlhdCI6MTc0NzkwMzQ3NywiZXhwIjoxNzQ3OTg5ODc3fQ.VvAtV--latLPSZg4RTmieKjS0WbDQI44lp6pBgEBCS4';
 
-                      final resp = await dio.post(
-                        'http://$ip/auth/token',
-                        options: Options(
-                            headers: {'authorization': 'Bearer $refreshToken'}),
-                      );
-
-                      print(resp.data);
                     },
                     style: TextButton.styleFrom(
                       foregroundColor: Colors.black,
